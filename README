@@ -1,0 +1,14 @@
+This library adds some extra functions to use with vectors and matrixes.
+
+new functions in Array prototype:
+
+Array.init(length,initNum); --> Initializes a vector and sets initNum on each cell.
+Array.initM(fil,col,initNum); --> Initializes a matrix and sets initNum on each cell
+
+Array.copy(matrix); --> copy matrix to this array.
+Array.writeM(); --> write the matrix on the document.
+Array.transM(); --> replaces the matrix with the transposed version of itself.
+
+comming soon:
+
+Matrix and vector operations =)
