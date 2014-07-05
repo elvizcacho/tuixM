@@ -19,13 +19,13 @@ Array.prototype.initM = function(m,n,initNum){
     this[j]=a;
   }
 }
-//add to Array prototype a function to write the whole matrix
+//adds to Array prototype a function to write the whole matrix
 Array.prototype.writeM = function(){
  for(j=0;j<this.length;j++){
   for(i=0;i<this[j].length;i++){
-    document.write(this[j][i]);
+    document.write(this[j][i]+' ');
   }
-  document.write('\n');
+  document.write('\n\n');
  }
 }
 
@@ -39,7 +39,7 @@ Array.prototype.copy = function(matriz){//copies 'matriz' to this
   }
 }
 
-Array.prototype.transM = function(){//get the transpose of a matrix
+Array.prototype.transM = function(){//gets the transpose of a matrix
     
   if(this.length > 0){
     if(this[0].length > 1){
@@ -59,5 +59,44 @@ Array.prototype.transM = function(){//get the transpose of a matrix
   }
   else{
     throw 'matrix is not initialized';
+  }
+}
+
+Array.prototype.toEach = function(f){//applies f to each matrix cell
+  var i;
+  var j;
+  for(j=0;j<this.length;j++){
+    for(i=0;i<this[j].length;i++){
+      this[j][i] = f(this[j][i]);
+    }
+  }
+}
+
+Array.prototype.fbM = function(f,matrix){//
+  var i;
+  var j;
+  for(j=0;j<this.length;j++){
+    for(i=0;i<this[j].length;i++){
+      this[j][i] = f(this[j][i],matrix[j][i]);
+    }
+  }
+}
+
+Array.prototype.sumM = function(matrix){//matrix addition
+  this.fbM(function(num1,num2){
+  return num1 + num2;
+  },matrix);
+}
+
+Array.prototype.multM = function(matrix1,matrix2){//matrix multiplication
+  var i;
+  var j;
+  var m;
+  for(j=0;j<matrix1.length;j++){
+    for(i=0;i<matrix1[j].length;i++){
+      for(m=0;m<matrix1.length;m++){
+       this[i][j]+=matrix1[i][m]*matrix2[m][j];
+      }
+    }
   }
 }
