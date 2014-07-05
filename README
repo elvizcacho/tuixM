@@ -5,10 +5,10 @@ new functions in Array prototype:
 Array.init(length,initNum); --> Initializes a vector and sets initNum on each cell.
 Array.initM(fil,col,initNum); --> Initializes a matrix and sets initNum on each cell
 
-Array.copy(matrix); --> copy matrix to this array.
-Array.writeM(); --> write the matrix on the document.
+Array.copy(matrix); --> copies matrix to this array.
+Array.writeM(); --> writes the matrix on the document.
 Array.transM(); --> replaces the matrix with the transposed version of itself.
-
-comming soon:
-
-Matrix and vector operations =)
+Array.toEach(f); --> applies f to each matrix cell.
+Array.fbM(f,matrix) --> applies f between this Array cells and matrix cells.
+Array.sumM(matrix) --> matrix addition between this Array and matrix parameter.
+Array.sumM(matrix) --> matrix multiplication between this Array and matrix parameter.

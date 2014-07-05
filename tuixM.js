@@ -72,7 +72,7 @@ Array.prototype.toEach = function(f){//applies f to each matrix cell
   }
 }
 
-Array.prototype.fbM = function(f,matrix){//
+Array.prototype.fbM = function(f,matrix){//does f between  matrix and this cells
   var i;
   var j;
   for(j=0;j<this.length;j++){
