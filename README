@@ -1,14 +1,27 @@
 This library adds some extra functions to use with vectors and matrixes.
 
-new functions in Array prototype:
+Vector object: you can create a new instance from this object to get the additional functions to use with vectors.
 
-Array.init(length,initNum); --> Initializes a vector and sets initNum on each cell.
-Array.initM(fil,col,initNum); --> Initializes a matrix and sets initNum on each cell
+Vector(length); --> Constructor.
+e.g.
+var v1 = new Vector(10);//[0,0,0,0,0,0,0,0,0,0]
+var v2 = new Vector([1,2,3,4,5]);//[1,2,3,4,5]
 
-Array.copy(matrix); --> copies matrix to this array.
-Array.writeM(); --> writes the matrix on the document.
-Array.transM(); --> replaces the matrix with the transposed version of itself.
-Array.toEach(f); --> applies f to each matrix cell.
-Array.fbM(f,matrix) --> applies f between this Array cells and matrix cells.
-Array.sumM(matrix) --> matrix addition between this Array and matrix parameter.
-Array.sumM(matrix) --> matrix multiplication between this Array and matrix parameter.
+Matrix object: you can create a new instance from this object to get the additional functions to use with matrixes.
+
+e.g.
+var m1 = new Matrix(3,3);//[[0,0,0],[0,0,0],[0,0,0]]
+var m2 = new Matrix([[1,2],[3,4]]);//[[1,2],[3,4]]
+
+Methods:
+Matrix(row:Number,col:Number); --> Constructor.
+copy(matrix:Matrix); --> Copies matrix.
+writeM(); --> writes the matrix on the document.
+
+Mmath "static" object: use it to do operations between matrixes.
+
+Mmath.transM(matrix1:Matrix):Matrix --> returns matrix transposed of matrix1;
+Mmath.toEach(matrix:Matrix,f:function):Matrix --> applies f to each matrix cell.
+Mmath.fbM(f:function,matrix1:Matrix,matrix2:Matrix):Matrix --> applies f between the cells of matrix1 and matrix2.
+Mmath.sum(matrix1:Matrix,matrix2:Matrix):Matrix -->returns matrix addition between matrix1 and matrix2.
+Mmath.mult(matrix1:Matrix,matrix2:Matrix):Matrix --> returns the matrix multiplication between matrix1 and matrix 2;
